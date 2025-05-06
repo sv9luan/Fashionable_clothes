@@ -58,16 +58,16 @@
                                             @php
                                                 $i = 0;
                                             @endphp
-                                            @foreach ($sliders as $slider)
+                                            @foreach ($sliders as $slide)
                                                 <tr>
                                                     <td>{{ ++$i }}</td>
-                                                    <td><img src="{{ asset('assets/imgs/slider') }}/{{ $slide->image }}"
+                                                    <td><img src="{{ asset('assets/imgs/slides') }}/{{ $slide->image }}"
                                                             width="80"> </td>
                                                     <td>{{ $slide->top_title }}</td>
                                                     <td>{{ $slide->title }}</td>
                                                     <td>{{ $slide->sub_title }}</td>
-                                                    <td>{{ $slider->ofer }}</td>
-                                                    <td>{{ $slider->link }}</td>
+                                                    <td>{{ $slide->offer }}</td>
+                                                    <td>{{ $slide->link }}</td>
                                                     <td>{{ $slide->status == 1 ? 'Active' : 'Inactive' }}</td>
                                                     <td>
                                                         <a href="{{ route('admin.home.slide.edit', ['slide_id' => $slide->id]) }}"
@@ -107,7 +107,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
                     data-bs-target="#deleteConfirmation">Đóng</button>
-                <button type="button" class="btn btn-danger" onclick="deleteCategory()">Xoá</button>
+                <button type="button" class="btn btn-danger" onclick="deleteSlide()">Xoá</button>
             </div>
         </div>
     </div>
@@ -116,12 +116,12 @@
 @push('scripts')
     <script>
         function deleteConfirmation(id) {
-            @this.set('category_id', id);
+            @this.set('slide_id', id);
             $('#deleteConfirmation').modal('show');
         }
 
-        function deleteCategory() {
-            @this.call('deleteCategory');
+        function deleteSlide() {
+            @this.call('deleteSlide');
             $('#deleteConfirmation').modal('hide');
         }
     </script>

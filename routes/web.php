@@ -72,7 +72,7 @@ Route::middleware(['auth', 'authadmin'])->group(function () {
     route::get('/admin/product/edit/{product_id}', AdminEditProductComponent::class)->name('admin.product.edit');
     route::get('/admin/slider', AdminHomeSliderComponent::class)->name('admin.home.slider');
     route::get('/admin/slider/add', AdminAddSlideComponent::class)->name('admin.home.slide.add');
-    route::get('/admin/slider/edit/{slider_id}', AdminEditSlideComponent::class)->name('admin.home.slide.edit');
+    route::get('/admin/slider/edit/{slide_id}', AdminEditSlideComponent::class)->name('admin.home.slide.edit');
 });
 
 require __DIR__.'/auth.php';
