@@ -45,8 +45,10 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
+                                                <th>Hình ảnh</th>
                                                 <th>Tên danh mục</th>
                                                 <th>Slug</th>
+                                                <th>Trạng thái</th>
                                                 <th>Hành động</th>
                                             </tr>
                                         </thead>
@@ -56,9 +58,14 @@
                                             @endphp
                                             @foreach ($categories as $category)
                                                 <tr>
+                                                    <td>
+                                                        <img src="{{ asset('assets/imgs/categories/' . $category->image) }}"
+                                                            alt="{{ $category->name }}" width="60" height="60">
+                                                    </td>
                                                     <td>{{ ++$i }}</td>
                                                     <td>{{ $category->name }}</td>
                                                     <td>{{ $category->slug }}</td>
+                                                    <td>{{ $category->is_pupolar == 1 ? 'Yes' : 'No' }}</td>
                                                     <td>
                                                         <a href="{{ route('admin.category.edit', ['category_id' => $category->id]) }}"
                                                             class="text-info">Sửa

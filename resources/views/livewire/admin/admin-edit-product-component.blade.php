@@ -111,11 +111,11 @@
                                         @enderror
                                     </div>
                                     <div class="mb-3 mt-3">
-                                        <label for="featured" class="form-label" wire:model="featured">Sản phẩm nổi
+                                        <label for="featured" class="form-label">Sản phẩm nổi
                                             bật</label>
-                                        <select class="form-control" name="featured">
-                                            <option value="0">Nổi bật</option>
-                                            <option value="1">Không nổi bật</option>
+                                        <select class="form-control" name="featured" wire:model="featured">
+                                            <option value="1">Nổi bật</option>
+                                            <option value="0">Không nổi bật</option>
                                         </select>
                                         @error('featured')
                                             <p class="alert alert-danger mt-2">{{ $message }}</p>

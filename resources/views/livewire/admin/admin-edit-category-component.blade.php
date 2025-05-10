@@ -59,6 +59,34 @@
                                             <p class="alert alert-danger mt-2">{{ $message }}</p>
                                         @enderror
                                     </div>
+                                    <div class="mb-3 mt-3">
+                                        <label for="slug" class="form-label">Hình ảnh</label>
+                                        <input type="file" class="form-control" name="image" wire:model="newimage">
+                                        @error('newimage')
+                                            <p class="alert alert-danger mt-2">{{ $message }}</p>
+                                        @enderror
+                                        @if ($newimage)
+                                            <div class="mt-3">
+                                                <img src="{{ $newimage->temporaryUrl() }}" width="120"
+                                                    alt="">
+                                            </div>
+                                        @else
+                                            {{-- <div class="mt-3">
+                                                <img src="{{ asset('assets/imgs/categories') }}/{{ $cartegory->image }}"
+                                                    width="120" alt="">
+                                            </div> --}}
+                                        @endif
+                                    </div>
+                                    <div class="mb-3 mt-3">
+                                        <label for="is_popular" class="form-label">Trạng thái</label>
+                                        <select class="form-control" wire:model="is_popular">
+                                            <option value="0">Không</option>
+                                            <option value="1">Có</option>
+                                        </select>
+                                        @error('is_popular')
+                                            <p class="alert alert-danger mt-2">{{ $message }}</p>
+                                        @enderror
+                                    </div>
                                     <button type="submit" class="btn btn-primary float-end">Cập nhật</button>
                                 </form>
                             </div>

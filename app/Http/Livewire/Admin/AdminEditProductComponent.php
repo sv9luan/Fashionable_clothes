@@ -73,7 +73,8 @@ class AdminEditProductComponent extends Component
         $product->slug = $this->slug;
         $product->short_description = $this->short_description;
         $product->description = $this->description;
-        $product->regular_price = $this->regular_price;       
+        $product->regular_price = $this->regular_price;      
+        $product->sale_price = $this->sale_price; 
         $product->SKU = $this->SKU;
         $product->stock_status = $this->stock_status;
         $product->featured = $this->featured;
